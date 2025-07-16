@@ -43,6 +43,7 @@ Add view to your layout:
     android:layout_below="@id/toolbar" />
  ```
 
+Setup JAVA:
  ```java
     CodeView mCodeView = findViewById(R.id.codeView);
 
@@ -52,7 +53,9 @@ Add view to your layout:
                 .setZoomEnabled(true)
                 .apply();
  ```
+
 or add other >>>>
+
  ```java
     CodeView mCodeView = findViewById(R.id.codeView);
 
@@ -95,7 +98,8 @@ mCodeView.setOnHighlightListener(new CodeView.OnHighlightListener() {
  ```
 
 
-## Other Methods
+ Other Methods on Menu Preference:
+
 ```java
 
 @Override
@@ -150,10 +154,14 @@ public boolean onOptionsItemSelected(MenuItem item) {
     return super.onOptionsItemSelected(item);
 }
 ```
-
+.
+.
+.
+.
 
 ## full activity for example
-
+.....................
+activity_main:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -178,6 +186,8 @@ public boolean onOptionsItemSelected(MenuItem item) {
 
 </RelativeLayout>
  ```
+
+MainActivity:
 ```java
 package com.jakir.codeview;
 
@@ -312,4 +322,4 @@ public class MainActivity extends AppCompatActivity {
 }
 
  ```
-![](https://raw.githubusercontent.com/tiagohm/CodeView/master/1.png)
+![](https://raw.githubusercontent.com/alphatech-apps/CodeView/master/1.png)
