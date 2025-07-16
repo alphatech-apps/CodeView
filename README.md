@@ -1,5 +1,5 @@
 # CodeView
-### Android Code Highlighter
+### Android Code Highlighter 
 
 [![](https://jitpack.io/v/tiagohm/CodeView.svg)](https://jitpack.io/#tiagohm/CodeView)
 
