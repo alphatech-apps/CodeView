@@ -322,5 +322,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
  ```
+
+## Screenshots
 ![](https://github.com/alphatech-apps/CodeView/blob/master/master/1.png)
-![](https://raw.githubusercontent.com/alphatech-apps/CodeView/master/2.png)
+![](https://github.com/alphatech-apps/CodeView/blob/master/master/2.png)
