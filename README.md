@@ -1,22 +1,25 @@
 # CodeView
-### Android Code Highlighter 
+### LATEST-VERSION
 
 [![](https://jitpack.io/v/tiagohm/CodeView.svg)](https://jitpack.io/#tiagohm/CodeView)
 
 ## Install
 Add it in your root `build.gradle` at the end of repositories:
 ```gradle
-allprojects {
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        ...
-        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
 Add the dependency:
 ```gradle
-compile 'com.github.alphatech-apps:CodeView:LATEST-VERSION
-```
+dependencies {
+	        implementation 'com.github.alphatech-apps:CodeView:LATEST-VERSION'
+	}```
 
 ## Features
 * Powered by Highlight.js
