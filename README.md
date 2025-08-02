@@ -1,7 +1,7 @@
 # CodeView
 ### LATEST-VERSION
 
-[![](https://jitpack.io/v/tiagohm/CodeView.svg)](https://jitpack.io/#tiagohm/CodeView)
+[![](https://jitpack.io/v/alphatech-apps/CodeView.svg)](https://jitpack.io/#alphatech-apps/CodeView)
 
 ## Install
 Add it in your root `build.gradle` at the end of repositories:
