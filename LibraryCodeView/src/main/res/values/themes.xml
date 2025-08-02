@@ -8,6 +8,10 @@
         <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
     </style>
 
+    <style name="MyPopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/popupmenu_bg_custom</item>
+    </style>
+
 
     <style name="Theme.CodeView" parent="Base.Theme.CodeView" />
 </resources>
