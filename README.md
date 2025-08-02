@@ -19,7 +19,8 @@ Add the dependency:
 ```gradle
 dependencies {
 	        implementation 'com.github.alphatech-apps:CodeView:LATEST-VERSION'
-	}```
+	}
+```
 
 ## Features
 * Powered by Highlight.js
