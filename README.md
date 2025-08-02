@@ -327,6 +327,15 @@ public class MainActivity extends AppCompatActivity {
 
  ```
 
+## make sure  to add this line on themes for rounded popup menu
+.....................
+themes:
+```xml
+
+        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
+
+ ```
+
 ## Screenshots
 ![](https://github.com/alphatech-apps/CodeView/blob/master/master/1.png)
 ![](https://github.com/alphatech-apps/CodeView/blob/master/master/2.png)
