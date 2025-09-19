@@ -18,7 +18,7 @@ dependencyResolutionManagement {
 Add the dependency:
 ```gradle
 dependencies {
-	        implementation 'com.github.alphatech-apps:CodeView:LATEST-VERSION'
+	        implementation 'com.github.alphatech-apps:CodeView:LATEST_VERSION'
 	}
 ```
 
