@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#FFFFFF</color>
     <color name="androidstudio">#282B2E</color>
     <color name="tomorrownight">#1D1F21</color>
 </resources>

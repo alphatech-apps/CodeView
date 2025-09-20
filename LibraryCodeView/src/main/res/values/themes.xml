@@ -3,6 +3,7 @@
     <style name="Base.Theme.CodeView" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorSurface">@color/background</item>
 
         <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
         <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
