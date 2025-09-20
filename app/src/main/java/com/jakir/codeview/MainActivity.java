@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         mCodeView = findViewById(R.id.code_view);
 
-        mCodeView.setTheme(Theme.ARDUINO_LIGHT).setCode(JAVA_CODE).setLanguage(Language.AUTO).setZoomEnabled(true).apply();
+        mCodeView.setTheme(Theme.TOMORROW).setCode(JAVA_CODE).setLanguage(Language.AUTO).setZoomEnabled(true).apply();
 
-//        mCodeView.setTheme(Theme.ARDUINO_LIGHT).setCode(JAVA_CODE).setLanguage(Language.AUTO).setWrapLine(true).setFontSize(14).setZoomEnabled(true).setShowLineNumber(true).setStartLineNumber(1).apply();
+//        mCodeView.setTheme(Theme.TOMORROW).setCode(JAVA_CODE).setLanguage(Language.AUTO).setWrapLine(true).setFontSize(14).setZoomEnabled(true).setShowLineNumber(true).setStartLineNumber(1).apply();
 
         mCodeView.setOnHighlightListener(new CodeView.OnHighlightListener() {
             @Override
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             if (newState) {
                 mCodeView.setTheme(Theme.ANDROIDSTUDIO).apply();
             } else {
-                mCodeView.setTheme(Theme.ARDUINO_LIGHT).apply();
+                mCodeView.setTheme(Theme.TOMORROW).apply();
             }
             return true;
         }

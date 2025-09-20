@@ -61,7 +61,7 @@ public class CodeView extends WebView {
         //Define os atributos
         setWrapLine(attributes.getBoolean(R.styleable.CodeView_cv_wrap_line, false));
         setFontSize(attributes.getInt(R.styleable.CodeView_cv_font_size, 14));
-        setZoomEnabled(attributes.getBoolean(R.styleable.CodeView_cv_zoom_enable, false));
+        setZoomEnabled(attributes.getBoolean(R.styleable.CodeView_cv_zoom_enable, true));
         setShowLineNumber(attributes.getBoolean(R.styleable.CodeView_cv_show_line_number, false));
         setStartLineNumber(attributes.getInt(R.styleable.CodeView_cv_start_line_number, 1));
         highlightLineNumber = attributes.getInt(R.styleable.CodeView_cv_highlight_line_number, -1);
