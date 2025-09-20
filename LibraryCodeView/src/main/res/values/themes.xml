@@ -12,12 +12,18 @@
     <style name="Base.Theme.CodeViewLight" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+        <item name="colorSurface">@color/background</item>
+
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item></style>
 
     <style name="Base.Theme.CodeViewDark" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+        <item name="colorSurface">@color/background</item>
+
+        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
+        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item> </style>
 
     <style name="MyPopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@drawable/popupmenu_bg_custom</item>
