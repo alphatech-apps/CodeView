@@ -2,16 +2,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/change_daynight_action"
+        android:id="@+id/change_theme_action"
         android:icon="@drawable/outline_brightness_4_24"
-        android:title="Day Night"
-        android:checkable="true"
-        app:showAsAction="always" />
+        android:title="App Theme"
+         app:showAsAction="always" />
     <item
         android:id="@+id/show_line_number_action"
         android:checkable="true"
         android:title="Line Numbers" />
-
     <item
         android:id="@+id/show_wrapline_action"
         android:checkable="true"
@@ -21,7 +19,7 @@
         android:checkable="true"
         android:title="Zoomable" />
     <item
-        android:id="@+id/change_theme_action"
-        android:title="Change Theme" />
+        android:id="@+id/change_color_action"
+        android:title="Change color" />
 
 </menu>

@@ -2,11 +2,11 @@ package lib.jakir.codeview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.Html;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.webkit.JavascriptInterface;
@@ -22,8 +22,8 @@ public class CodeView extends WebView {
 
     private String code = "";
     private String escapeCode;
-    private Theme theme;
-    private Language language;
+    private CodeTheme codeTheme;
+    private CodeLanguage codeLanguage;
     private float fontSize = 14;
     private boolean wrapLine = true;
     private OnHighlightListener onHighlightListener;
@@ -159,30 +159,30 @@ public class CodeView extends WebView {
     /**
      * Obtém o tema.
      */
-    public Theme getTheme() {
-        return theme;
+    public CodeTheme getTheme() {
+        return codeTheme;
     }
 
     /**
      * Define o tema.
      */
-    public CodeView setTheme(Theme theme) {
-        this.theme = theme;
+    public CodeView setTheme(CodeTheme codeTheme) {
+        this.codeTheme = codeTheme;
         return this;
     }
 
     /**
      * Obtém a linguagem.
      */
-    public Language getLanguage() {
-        return language;
+    public CodeLanguage getLanguage() {
+        return codeLanguage;
     }
 
     /**
      * Define a linguagem.
      */
-    public CodeView setLanguage(Language language) {
-        this.language = language;
+    public CodeView setLanguage(CodeLanguage codeLanguage) {
+        this.codeLanguage = codeLanguage;
         return this;
     }
 
@@ -277,6 +277,15 @@ public class CodeView extends WebView {
 
     private String toHtml() {
         StringBuilder sb = new StringBuilder();
+        TypedValue typedValue = new TypedValue();
+        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true);
+        String bgColor = String.format("#%06X", (0xFFFFFF & typedValue.data));
+        TypedValue typedValueText = new TypedValue();
+        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorOnSurface, typedValueText, true);
+        String tColor = String.format("#%06X", (0xFFFFFF & typedValueText.data));
+
+        String fontSize = String.format(Locale.ENGLISH, "%dpx;", (int) getFontSize());
+
         //html
         sb.append("<!DOCTYPE html>\n").append("<html>\n").append("<head>\n");
         //style
@@ -284,7 +293,9 @@ public class CodeView extends WebView {
         sb.append("<style>\n");
         //body
         sb.append("body {");
-        sb.append("font-size:").append(String.format("%dpx;", (int) getFontSize()));
+        sb.append("background-color:").append(bgColor).append(";");
+        sb.append("font-size:").append(fontSize);
+        sb.append("color:").append(tColor).append(";");
         sb.append("margin: 0px; line-height: 1.2;");
         sb.append("}\n");
         //.hljs
@@ -317,7 +328,7 @@ public class CodeView extends WebView {
         sb.append("</head>");
         //code
         sb.append("<body>");
-        sb.append("<pre><code class='").append(language.getLanguageName()).append("'>").append(insertLineNumber(escapeCode)).append("</code></pre>\n");
+        sb.append("<pre><code class='").append(codeLanguage.getLanguageName()).append("'>").append(insertLineNumber(escapeCode)).append("</code></pre>\n");
         return sb.toString();
     }
 

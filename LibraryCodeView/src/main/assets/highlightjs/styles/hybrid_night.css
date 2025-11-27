@@ -1,95 +1,98 @@
 /*
- Hybrid Light Theme (Converted from vim-hybrid dark)
+
+vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
+
 */
 
-/* background */
+/*background color*/
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #ffffff; /* light bg */
-  color: #2b2b2b; /* default text */
+  background: #1d1f21;
 }
 
-/* selection */
+/*selection color*/
 .hljs::selection,
 .hljs span::selection {
-  background: #cdd7e1;
+  background: #373b41;
 }
 
 .hljs::-moz-selection,
 .hljs span::-moz-selection {
-  background: #cdd7e1;
+  background: #373b41;
 }
 
-/* ===== COLORS (converted for light mode) ===== */
+/*foreground color*/
+.hljs {
+  color: #c5c8c6;
+}
 
-/* yellow → warm brown */
+/*color: fg_yellow*/
 .hljs-title,
 .hljs-name {
-  color: #b58900;
+  color: #f0c674;
 }
 
-/* comments → cool gray */
+/*color: fg_comment*/
 .hljs-comment,
 .hljs-meta,
 .hljs-meta .hljs-keyword {
-  color: #8e908c;
+  color: #707880;
 }
 
-/* red → soft red */
+/*color: fg_red*/
 .hljs-number,
 .hljs-symbol,
 .hljs-literal,
 .hljs-deletion,
 .hljs-link {
- color: #d14;
+ color: #cc6666
 }
 
-/* green → softer green */
+/*color: fg_green*/
 .hljs-string,
 .hljs-doctag,
 .hljs-addition,
 .hljs-regexp,
 .hljs-selector-attr,
 .hljs-selector-pseudo {
-  color: #008000;
+  color: #b5bd68;
 }
 
-/* purple → violet */
+/*color: fg_purple*/
 .hljs-attribute,
 .hljs-code,
 .hljs-selector-id {
- color: #6f42c1;
+ color: #b294bb;
 }
 
-/* blue → deep blue */
+/*color: fg_blue*/
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-bullet,
 .hljs-tag {
- color: #007acc;
+ color: #81a2be;
 }
 
-/* aqua → teal */
+/*color: fg_aqua*/
 .hljs-subst,
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #005f5f;
+  color: #8abeb7;
 }
 
-/* orange → brownish orange */
+/*color: fg_orange*/
 .hljs-type,
 .hljs-built_in,
 .hljs-builtin-name,
 .hljs-quote,
 .hljs-section,
 .hljs-selector-class {
-  color: #a85d00;
+  color: #de935f;
 }
 
-/* emphasis / strong */
 .hljs-emphasis {
   font-style: italic;
 }

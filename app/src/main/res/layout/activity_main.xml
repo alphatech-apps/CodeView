@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="?attr/colorSurface"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -14,10 +14,19 @@
         android:background="@android:color/transparent"
         app:title="Settings" />
 
-    <lib.jakir.codeview.CodeView
-        android:id="@+id/code_view"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        app:cardCornerRadius="20dp"
+        app:strokeWidth="0dp">
+
+        <lib.jakir.codeview.CodeView
+            android:id="@+id/code_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.card.MaterialCardView>
+
 
 </RelativeLayout>

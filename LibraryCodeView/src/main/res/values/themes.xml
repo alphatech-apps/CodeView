@@ -1,7 +1,7 @@
 <resources>
-    <!-- Base application theme. -->
+    <!-- Base application codeTheme. -->
     <style name="Base.Theme.CodeView" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Customize your light codeTheme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorSurface">@color/background</item>
         <item name="colorSurfaceContainer">@color/background2</item>
@@ -11,7 +11,7 @@
     </style>
 
     <style name="Base.Theme.CodeViewLight" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Customize your light codeTheme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorSurface">@color/white</item>
 
@@ -20,7 +20,7 @@
     </style>
 
     <style name="Base.Theme.CodeViewDark" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Customize your light theme here. -->
+        <!-- Customize your light codeTheme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorSurface">@color/tomorrownight</item>
 

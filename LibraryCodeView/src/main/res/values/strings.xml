@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">CodeView</string>
+
+
+    <string-array name="theme_options">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>System (Default)</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>1</item>
+        <item>2</item>
+        <item>-1</item>
+    </string-array>
+
 </resources>

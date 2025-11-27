@@ -16,9 +16,15 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int themeInt = Pref.getState(Key.isNight, this) ? 2 : 1;
-        AppCompatDelegate.setDefaultNightMode(themeInt); //set theme
+ //         int themeInt = Pref.getState(Key.isNight, this) ? 2 : 1;
+//        AppCompatDelegate.setDefaultNightMode(themeInt); //set theme
         //or
 //        setTheme(Pref.getState(Key.isNight, this) ? lib.jakir.codeview.R.style.Theme_CodeViewDark : lib.jakir.codeview.R.style.Theme_CodeViewLight);
+
+
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM); //set theme
     }
+
+
 }

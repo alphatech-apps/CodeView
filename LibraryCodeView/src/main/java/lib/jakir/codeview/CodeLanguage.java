@@ -4,7 +4,7 @@ package lib.jakir.codeview;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum Language {
+public enum CodeLanguage {
 
     AUTO(""),
     _1C("1c"),
@@ -184,22 +184,22 @@ public enum Language {
     YAML("yaml"),
     ZEPHIR("zephir");
 
-    private static final Map<String, Language> LANGUAGES = new HashMap<>();
+    private static final Map<String, CodeLanguage> LANGUAGES = new HashMap<>();
     private final String name;
 
     static {
-        for (Language language : values()) {
-            if (language != AUTO) {
-                LANGUAGES.put(language.name, language);
+        for (CodeLanguage codeLanguage : values()) {
+            if (codeLanguage != AUTO) {
+                LANGUAGES.put(codeLanguage.name, codeLanguage);
             }
         }
     }
 
-    Language(String name) {
+    CodeLanguage(String name) {
         this.name = name;
     }
 
-    public static Language getLanguageByName(String name) {
+    public static CodeLanguage getLanguageByName(String name) {
         return LANGUAGES.get(name);
     }
 

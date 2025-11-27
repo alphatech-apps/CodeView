@@ -1,0 +1,132 @@
+/* vs-night.css - VS Code Dark+ like for highlight.js */
+
+/* base / background */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #1e1e1e;           /* editor background */
+  color: #d4d4d4;                /* default text */
+}
+
+/* comments */
+.hljs-comment,
+.hljs-quote {
+  color: #6a9955;
+  font-style: italic;
+}
+
+/* keywords, selector, tag */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-doctag {
+  color: #c586c0;
+  font-weight: 600;
+}
+
+/* builtins, functions */
+.hljs-built_in,
+.hljs-class .hljs-title,
+.hljs-title,
+.hljs-function {
+  color: #dcdcaa;
+}
+
+/* numbers */
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-symbol {
+  color: #b5cea8;
+}
+
+/* strings and chars */
+.hljs-string,
+.hljs-meta .hljs-string {
+  color: #ce9178;
+}
+
+/* attributes / params */
+.hljs-attribute,
+.hljs-params,
+.hljs-variable {
+  color: #9cdcfe;
+}
+
+/* types */
+.hljs-type,
+.hljs-class,
+.hljs-strong {
+  color: #4ec9b0;
+  font-weight: 600;
+}
+
+/* punctuation */
+.hljs-attr,
+.hljs-subst,
+.hljs-tag {
+  color: #d4d4d4;
+}
+
+/* meta / selectors */
+.hljs-meta,
+.hljs-meta .hljs-keyword {
+  color: #9b9b9b;
+}
+
+/* function names */
+.hljs-title.function_ {
+  color: #dcdcaa;
+}
+
+/* names / selectors */
+.hljs-name,
+.hljs-link {
+  color: #d7ba7d;
+}
+
+/* other emphasis */
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 700;
+}
+
+/* highlighted line style (class 'destacado' used by CodeView) */
+td.destacado {
+  background: rgba(255, 218, 17, 0.12); /* subtle yellow highlight on dark bg */
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+/* hover line */
+td.line:hover {
+  background: rgba(100, 221, 23, 0.08);
+  color: #ffffff;
+  border-radius: 2px;
+}
+
+/* line number column */
+td.ln {
+  color: #858585;
+  padding-right: 8px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* wrap line behavior (if you use pre-wrap) keep it legible */
+td.line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: inherit;
+}
+
+/* small tweaks for inline code spans */
+code > span {
+  display: none;
+}
+
+/* make links visible on dark bg */
+a { color: #569cd6; text-decoration: underline; }
