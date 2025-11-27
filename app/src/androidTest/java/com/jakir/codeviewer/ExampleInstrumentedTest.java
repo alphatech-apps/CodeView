@@ -1,4 +1,4 @@
-package lib.jakir.codeview;
+package com.jakir.codeviewer;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("lib.jakir.codeview.test", appContext.getPackageName());
+        assertEquals("com.jakir.codeview", appContext.getPackageName());
     }
 }

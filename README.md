@@ -108,15 +108,15 @@ mCodeView.setOnHighlightListener(new CodeView.OnHighlightListener() {
 
 @Override
 public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(lib.jakir.codeview.R.menu.menu_codeview_settings, menu);
+    getMenuInflater().inflate(com.jakir.codeview.R.menu.menu_codeview_settings, menu);
     return true;
 }
 
 @Override
 public boolean onPrepareOptionsMenu(Menu menu) {
-    menu.findItem(lib.jakir.codeview.R.id.show_line_number_action).setChecked(mCodeView.isShowLineNumber());
-    menu.findItem(lib.jakir.codeview.R.id.show_wrapline_action).setChecked(mCodeView.isWrapLine());
-    menu.findItem(lib.jakir.codeview.R.id.zoom_enabled_action).setChecked(mCodeView.isZoomEnabled());
+    menu.findItem(com.jakir.codeview.R.id.show_line_number_action).setChecked(mCodeView.isShowLineNumber());
+    menu.findItem(com.jakir.codeview.R.id.show_wrapline_action).setChecked(mCodeView.isWrapLine());
+    menu.findItem(com.jakir.codeview.R.id.zoom_enabled_action).setChecked(mCodeView.isZoomEnabled());
     return super.onPrepareOptionsMenu(menu);
 }
 
@@ -124,27 +124,27 @@ public boolean onPrepareOptionsMenu(Menu menu) {
 @Override
 public boolean onOptionsItemSelected(MenuItem item) {
     int id = item.getItemId();
-    if (id == lib.jakir.codeview.R.id.change_theme_action) {
+    if (id == com.jakir.codeview.R.id.change_theme_action) {
         new Theme("").dialog_show(this, mCodeView);
         return true;
-    } else if (id == lib.jakir.codeview.R.id.show_line_number_action) {
+    } else if (id == com.jakir.codeview.R.id.show_line_number_action) {
         boolean newState = !item.isChecked();
         item.setChecked(newState);
         mCodeView.setShowLineNumber(newState).apply();
 //            mCodeView.toggleLineNumber();
         return true;
-    } else if (id == lib.jakir.codeview.R.id.show_wrapline_action) {
+    } else if (id == com.jakir.codeview.R.id.show_wrapline_action) {
 //            mCodeView.toggleWrapLine(); //or > mCodeView.setWrapLine(!mCodeView.isWrapLine()).apply();
         boolean newState = !item.isChecked();
         item.setChecked(newState);
         mCodeView.setWrapLine(newState).apply();
         return true;
-    } else if (id == lib.jakir.codeview.R.id.zoom_enabled_action) {
+    } else if (id == com.jakir.codeview.R.id.zoom_enabled_action) {
         boolean newState = !item.isChecked();
         item.setChecked(newState);
         mCodeView.setZoomEnabled(newState).apply();
         return true;
-    } else if (id == lib.jakir.codeview.R.id.change_daynight_action) {
+    } else if (id == com.jakir.codeview.R.id.change_daynight_action) {
         boolean newState = !item.isChecked();
         item.setChecked(newState);
         if (newState) {
@@ -192,8 +192,9 @@ activity_main:
  ```
 
 MainActivity:
+
 ```java
-package com.jakir.codeview;
+package com.jakir.codeviewer;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -208,9 +209,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import lib.jakir.codeview.CodeView;
-import lib.jakir.codeview.CodeLanguage;
-import lib.jakir.codeview.CodeTheme;
+import com.jakir.codeview.CodeView;
+import com.jakir.codeview.CodeLanguage;
+import com.jakir.codeview.CodeTheme;
 
 public class MainActivity extends AppCompatActivity {
     private static final String JAVA_CODE = "package com.example.android.bluetoothchat;\n" + "\n" + "import android.os.Bundle;\n" + "import android.support.v4.app.FragmentTransaction;\n" + "import android.view.Menu;\n" + "import android.view.MenuItem;\n" + "import android.widget.ViewAnimator;\n" + "\n" + "import com.example.android.common.activities.SampleActivityBase;\n" + "import com.example.android.common.logger.Log;\n" + "import com.example.android.common.logger.LogFragment;\n" + "import com.example.android.common.logger.LogWrapper;\n" + "import com.example.android.common.logger.MessageOnlyLogFilter;\n" + "\n" + "/**\n" + " * A simple launcher activity containing a summary sample description, sample log and a custom\n" + " * {@link android.support.v4.app.Fragment} which can display a view.\n" + " * <p>\n" + " * For devices with displays with a width of 720dp or greater, the sample log is always visible,\n" + " * on other devices it's visibility is controlled by an item on the Action Bar.\n" + " */\n" + "public class MainActivity extends SampleActivityBase {\n" + "\n" + "    public static final String TAG = \"MainActivity\";\n" + "\n" + "    // Whether the Log Fragment is currently shown\n" + "    private boolean mLogShown;\n" + "\n" + "    @Override\n" + "    protected void onCreate(Bundle savedInstanceState) {\n" + "        super.onCreate(savedInstanceState);\n" + "        setContentView(R.layout.activity_main);\n" + "\n" + "        if (savedInstanceState == null) {\n" + "            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();\n" + "            BluetoothChatFragment fragment = new BluetoothChatFragment();\n" + "            transaction.replace(R.id.sample_content_fragment, fragment);\n" + "            transaction.commit();\n" + "        }\n" + "    }\n" + "\n" + "    @Override\n" + "    public boolean onCreateOptionsMenu(Menu menu) {\n" + "        getMenuInflater().inflate(R.menu.main, menu);\n" + "        return true;\n" + "    }\n" + "\n" + "    @Override\n" + "    public boolean onPrepareOptionsMenu(Menu menu) {\n" + "        MenuItem logToggle = menu.findItem(R.id.menu_toggle_log);\n" + "        logToggle.setVisible(findViewById(R.id.sample_output) instanceof ViewAnimator);\n" + "        logToggle.setTitle(mLogShown ? R.string.sample_hide_log : R.string.sample_show_log);\n" + "\n" + "        return super.onPrepareOptionsMenu(menu);\n" + "    }\n" + "\n" + "    @Override\n" + "    public boolean onPrepareOptionsMenu(Menu menu) {\n" + "        MenuItem logToggle = menu.findItem(R.id.menu_toggle_log);\n" + "        logToggle.setVisible(findViewById(R.id.sample_output) instanceof ViewAnimator);\n" + "        logToggle.setTitle(mLogShown ? R.string.sample_hide_log : R.string.sample_show_log);\n" + "\n" + "        return super.onPrepareOptionsMenu(menu);\n" + "    }\n" + "\n" + "    @Override\n" + "    public boolean onPrepareOptionsMenu(Menu menu) {\n" + "        MenuItem logToggle = menu.findItem(R.id.menu_toggle_log);\n" + "        logToggle.setVisible(findViewById(R.id.sample_output) instanceof ViewAnimator);\n" + "        logToggle.setTitle(mLogShown ? R.string.sample_hide_log : R.string.sample_show_log);\n" + "\n" + "        return super.onPrepareOptionsMenu(menu);\n" + "    }\n" + "\n" + "    @Override\n" + "    public boolean onOptionsItemSelected(MenuItem item) {\n" + "        switch(item.getItemId()) {\n" + "            case R.id.menu_toggle_log:\n" + "                mLogShown = !mLogShown;\n" + "                ViewAnimator output = (ViewAnimator) findViewById(R.id.sample_output);\n" + "                if (mLogShown) {\n" + "                    output.setDisplayedChild(1);\n" + "                } else {\n" + "                    output.setDisplayedChild(0);\n" + "                }\n" + "                supportInvalidateOptionsMenu();\n" + "                return true;\n" + "        }\n" + "        return super.onOptionsItemSelected(item);\n" + "    }\n" + "\n" + "    /** Create a chain of targets that will receive log data */\n" + "    @Override\n" + "    public void initializeLogging() {\n" + "        // Wraps Android's native log framework.\n" + "        LogWrapper logWrapper = new LogWrapper();\n" + "        // Using Log, front-end to the logging chain, emulates android.util.log method signatures.\n" + "        Log.setLogNode(logWrapper);\n" + "\n" + "        // Filter strips out everything except the message text.\n" + "        MessageOnlyLogFilter msgFilter = new MessageOnlyLogFilter();\n" + "        logWrapper.setNext(msgFilter);\n" + "\n" + "        // On screen logging via a fragment with a TextView.\n" + "        LogFragment logFragment = (LogFragment) getSupportFragmentManager()\n" + "                .findFragmentById(R.id.log_fragment);\n" + "        msgFilter.setNext(logFragment.getLogView());\n" + "\n" + "        Log.i(TAG, \"Ready\");\n" + "    }\n" + "}";
@@ -273,15 +274,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(lib.jakir.codeview.R.menu.menu_codeview_settings, menu);
+        getMenuInflater().inflate(com.jakir.codeview.R.menu.menu_codeview_settings, menu);
         return true;
     }
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(lib.jakir.codeview.R.id.show_line_number_action).setChecked(mCodeView.isShowLineNumber());
-        menu.findItem(lib.jakir.codeview.R.id.show_wrapline_action).setChecked(mCodeView.isWrapLine());
-        menu.findItem(lib.jakir.codeview.R.id.zoom_enabled_action).setChecked(mCodeView.isZoomEnabled());
+        menu.findItem(com.jakir.codeview.R.id.show_line_number_action).setChecked(mCodeView.isShowLineNumber());
+        menu.findItem(com.jakir.codeview.R.id.show_wrapline_action).setChecked(mCodeView.isWrapLine());
+        menu.findItem(com.jakir.codeview.R.id.zoom_enabled_action).setChecked(mCodeView.isZoomEnabled());
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -289,27 +290,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == lib.jakir.codeview.R.id.change_theme_action) {
+        if (id == com.jakir.codeview.R.id.change_theme_action) {
             new Theme("").dialog_show(this, mCodeView);
             return true;
-        } else if (id == lib.jakir.codeview.R.id.show_line_number_action) {
+        } else if (id == com.jakir.codeview.R.id.show_line_number_action) {
             boolean newState = !item.isChecked();
             item.setChecked(newState);
             mCodeView.setShowLineNumber(newState).apply();
 //            mCodeView.toggleLineNumber();
             return true;
-        } else if (id == lib.jakir.codeview.R.id.show_wrapline_action) {
+        } else if (id == com.jakir.codeview.R.id.show_wrapline_action) {
 //            mCodeView.toggleWrapLine(); //or > mCodeView.setWrapLine(!mCodeView.isWrapLine()).apply();
             boolean newState = !item.isChecked();
             item.setChecked(newState);
             mCodeView.setWrapLine(newState).apply();
             return true;
-        } else if (id == lib.jakir.codeview.R.id.zoom_enabled_action) {
+        } else if (id == com.jakir.codeview.R.id.zoom_enabled_action) {
             boolean newState = !item.isChecked();
             item.setChecked(newState);
             mCodeView.setZoomEnabled(newState).apply();
             return true;
-        } else if (id == lib.jakir.codeview.R.id.change_daynight_action) {
+        } else if (id == com.jakir.codeview.R.id.change_daynight_action) {
             boolean newState = !item.isChecked();
             item.setChecked(newState);
             if (newState) {

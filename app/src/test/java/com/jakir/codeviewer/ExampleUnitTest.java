@@ -1,4 +1,4 @@
-package lib.jakir.codeview;
+package com.jakir.codeviewer;
 
 import org.junit.Test;
 

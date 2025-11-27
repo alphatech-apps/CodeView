@@ -1,4 +1,4 @@
-package lib.jakir.codeview;
+package com.jakir.codeview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -317,8 +317,8 @@ public class CodeView extends WebView {
         sb.append("}\n");
         sb.append("code > span { display: none; }");
         sb.append("td.ln { text-align: right; padding-right: 2px; }");
-        sb.append("td.line:hover span {background: #64DD17; color: #fff;}");
-        sb.append("td.line:hover {background: #64DD17; color: #fff; border-radius: 2px;}");
+//        sb.append("td.line:hover span {background: #64DD17; color: #fff;}");
+//        sb.append("td.line:hover {background: #64DD17; color: #fff; border-radius: 2px;}");
         sb.append("td.destacado {background: #ffda11; color: #000; border-radius: 2px;}");
         sb.append("td.destacado span {background: #ffda11; color: #000;}");
         sb.append("</style>");

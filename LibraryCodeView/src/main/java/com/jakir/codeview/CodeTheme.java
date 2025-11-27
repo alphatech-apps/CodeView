@@ -1,8 +1,6 @@
-package lib.jakir.codeview;
+package com.jakir.codeview;
 
 import android.content.Context;
-
-import androidx.appcompat.app.AppCompatDelegate;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 

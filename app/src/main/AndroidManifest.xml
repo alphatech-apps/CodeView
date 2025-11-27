@@ -12,18 +12,60 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodeView"
         tools:targetApi="31">
+
         <activity
-            android:name=".MainActivityCodeView"
-            android:exported="false" />
-        <activity
-            android:name=".HomeActivity"
+            android:theme="@style/Theme.CodeView"
+            android:name=".CodeviewActivity"
+            android:icon="@mipmap/ic_launcher"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- SVG (primary) -->
+                <data android:mimeType="image/svg+xml" />
+
+                <!-- XML / HTML / JS / CSS / JSON / plain text -->
+                <data android:mimeType="application/xml" />
+                <data android:mimeType="text/xml" />
+                <data android:mimeType="text/html" />
+                <data android:mimeType="multipart/related" />
+                <data android:mimeType="text/css" />
+                <data android:mimeType="application/javascript" />
+                <data android:mimeType="application/json" />
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="text/x-java-source" />
+                <data android:mimeType="text/x-csrc" />
+                <data android:mimeType="text/x-c++src" />
+                <data android:mimeType="text/x-python" />
+                <data android:mimeType="text/javascript" />
+
+                <!-- Optional: fallback -->
+                <data android:mimeType="*/json" />
+                <data android:mimeType="*/xml" />
+
+
+            </intent-filter>
         </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
     </application>
 
 </manifest>
