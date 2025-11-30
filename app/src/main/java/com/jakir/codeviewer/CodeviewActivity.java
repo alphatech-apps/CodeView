@@ -72,7 +72,7 @@ public class CodeviewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        getDelegate().setLocalNightMode(Pref.getTheme_custom(Key.codeActivityTheme_codeview, this)); //set theme
+        getDelegate().setLocalNightMode(Pref.getTheme_2(Key.codeActivityTheme_codeview, this)); //set theme
         setContentView(R.layout.activity_codeview);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -210,7 +210,7 @@ public class CodeviewActivity extends AppCompatActivity {
         mCodeView.setVisibility(VISIBLE);
 
         String selectedCodeTheme = Pref.getString(Key.codeColorTheme_codeview, this).isEmpty() ? CodeTheme.ANDROIDSTUDIO.getName() : Pref.getString(Key.codeColorTheme_codeview, this);
-        mCodeView.setTheme(isDayMode() ? new CodeTheme(selectedCodeTheme) : new CodeTheme(selectedCodeTheme + "_night")).setCode(result).setShowLineNumber(Pref.getState(Key.line, getApplicationContext())).setWrapLine(Pref.getStatep(Key.wrapline, getApplicationContext())).setLanguage(CodeLanguage.AUTO).setZoomEnabled(true).apply();
+        mCodeView.setTheme(isDayMode() ? new CodeTheme(selectedCodeTheme) : new CodeTheme(selectedCodeTheme + "_night")).setCode(result).setShowLineNumber(Pref.getBoolean(Key.line, getApplicationContext())).setWrapLine(Pref.getBoolean(Key.wrapline, getApplicationContext(),true)).setLanguage(CodeLanguage.AUTO).setZoomEnabled(true).apply();
 
         mCodeView.setOnHighlightListener(new CodeView.OnHighlightListener() {
             @Override
@@ -312,7 +312,7 @@ public class CodeviewActivity extends AppCompatActivity {
             String[] themeOptions = getResources().getStringArray(com.jakir.codeview.R.array.theme_options);
             String[] themeValues = getResources().getStringArray(com.jakir.codeview.R.array.theme_values);
 
-            int currentTheme = Pref.getTheme_custom(Key.codeActivityTheme_codeview, this);
+            int currentTheme = Pref.getTheme_2(Key.codeActivityTheme_codeview, this);
             int currentIndex = 0;
             for (int i = 0; i < themeValues.length; i++) {
                 if (Integer.parseInt(themeValues[i]) == currentTheme) {
@@ -323,7 +323,7 @@ public class CodeviewActivity extends AppCompatActivity {
 
             new MaterialAlertDialogBuilder(this).setTitle("Change Theme").setSingleChoiceItems(themeOptions, currentIndex, (dialog, which) -> {
                 int selectedTheme = Integer.parseInt(themeValues[which]);
-                Pref.setTheme_custom(Key.codeActivityTheme_codeview, selectedTheme, this);
+                Pref.setTheme_2(Key.codeActivityTheme_codeview, selectedTheme, this);
                 getDelegate().setLocalNightMode(selectedTheme);
                 dialog.dismiss();
             }).setNegativeButton("Cancel", null).show()
@@ -345,14 +345,14 @@ public class CodeviewActivity extends AppCompatActivity {
             item.setChecked(newState);
             mCodeView.setShowLineNumber(newState).apply();
 //            mCodeView.toggleLineNumber();
-            Pref.setState(newState, Key.line, this);
+            Pref.setBoolean(Key.line,newState,  this);
             return true;
         } else if (id == com.jakir.codeview.R.id.show_wrapline_action) {
 //            mCodeView.toggleWrapLine(); //or > mCodeView.setWrapLine(!mCodeView.isWrapLine()).apply();
             boolean newState = !item.isChecked();
             item.setChecked(newState);
             mCodeView.setWrapLine(newState).apply();
-            Pref.setStatep(newState, Key.wrapline, this);
+            Pref.setBoolean(Key.wrapline,  newState, this);
             return true;
         } else if (id == com.jakir.codeview.R.id.zoom_enabled_action) {
             boolean newState = !item.isChecked();
