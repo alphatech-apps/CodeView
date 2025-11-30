@@ -10,11 +10,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CodeView"
+        android:theme="@style/Main.Theme.CodeView"
         tools:targetApi="31">
 
+        <!-- { Main.Theme.CodeView } this theme for codeview interface and ui-->
         <activity
-            android:theme="@style/Theme.CodeView"
+            android:theme="@style/Main.Theme.CodeView"
             android:name=".CodeviewActivity"
             android:icon="@mipmap/ic_launcher"
             android:exported="true">

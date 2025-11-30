@@ -5,7 +5,9 @@
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #1e1e1e;           /* editor background */
+/*
+  background: #1d1f21;
+*/
   color: #d4d4d4;                /* default text */
 }
 

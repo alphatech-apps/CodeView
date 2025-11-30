@@ -1,11 +1,12 @@
 /*
-Date: 24 Fev 2015
-Author: Pedro Oliveira <kanytu@gmail . com>
+Light version of the previous theme
 */
 
 .hljs {
-  color: #a9b7c6;
-  background: #282b2e;
+  color: #333333;          /* dark text */
+/*
+  background: #ffffff;
+*/
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -15,46 +16,46 @@ Author: Pedro Oliveira <kanytu@gmail . com>
 .hljs-literal,
 .hljs-symbol,
 .hljs-bullet {
-  color: #6897BB;
+  color: #0077aa;          /* darker blue */
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-deletion {
-  color: #cc7832;
+  color: #aa0000;          /* dark red */
 }
 
 .hljs-variable,
 .hljs-template-variable,
 .hljs-link {
-  color: #629755;
+  color: #005500;          /* dark green */
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #808080;
+  color: #888888;          /* gray for comments */
 }
 
 .hljs-meta {
-  color: #bbb529;
+  color: #666600;          /* darker yellow */
 }
 
 .hljs-string,
 .hljs-attribute,
 .hljs-addition {
-  color: #6A8759;
+  color: #008800;          /* dark green */
 }
 
 .hljs-section,
 .hljs-title,
 .hljs-type {
-  color: #ffc66d;
+  color: #aa5500;          /* dark orange */
 }
 
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #e8bf6a;
+  color: #995500;          /* brownish */
 }
 
 .hljs-emphasis {

@@ -8,5 +8,5 @@
     </style>
 
 
-    <style name="Theme.CodeView" parent="Base.Theme.CodeView" />
+    <style name="Main.Theme.CodeView" parent="Base.Theme.CodeView" />
 </resources>

@@ -9,12 +9,12 @@ import java.util.List;
 
 public class CodeTheme {
 
-    public static final CodeTheme ANDROIDSTUDIO = new CodeTheme("androidstudio");
-    public static final CodeTheme HYBRID = new CodeTheme("hybrid");
-    public static final CodeTheme TOMORROW = new CodeTheme("tomorrow");
+    public static final CodeTheme ANDROIDSTUDIO = new CodeTheme("Androidstudio");
+    public static final CodeTheme HYBRID = new CodeTheme("Hybrid");
+    public static final CodeTheme TOMORROW = new CodeTheme("Tomorrow");
     public static final CodeTheme TOMORROW_NIGHT = new CodeTheme("tomorrow_night");
     public static final CodeTheme TOMORROW_NIGHT_BRIGHT = new CodeTheme("tomorrow-night-bright");
-    public static final CodeTheme VS = new CodeTheme("vs");
+    public static final CodeTheme VS = new CodeTheme("Vscode");
 
     public static final List<CodeTheme> ALL = Arrays.asList(ANDROIDSTUDIO, HYBRID, TOMORROW, VS);
     private final String name;

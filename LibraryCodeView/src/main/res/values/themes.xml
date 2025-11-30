@@ -1,42 +1,17 @@
 <resources>
-    <!-- Base application codeTheme. -->
     <style name="Base.Theme.CodeView" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light codeTheme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorSurface">@color/background</item>
-        <item name="colorSurfaceContainer">@color/background2</item>
+        <item name="colorSurface">@color/main_background</item>
+        <item name="colorSurfaceContainerLowest">@color/code_background</item>
 
         <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
-        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
-    </style>
-
-    <style name="Base.Theme.CodeViewLight" parent="Theme.Material3.Light.NoActionBar">
-        <!-- Customize your light codeTheme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorSurface">@color/white</item>
-
-        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
-        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
-    </style>
-
-    <style name="Base.Theme.CodeViewDark" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Customize your light codeTheme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorSurface">@color/tomorrownight</item>
-
-        <item name="android:popupMenuStyle">@style/MyPopupMenu</item>
-        <item name="popupMenuBackground">@drawable/popupmenu_bg_custom</item>
+        <item name="popupMenuBackground">@drawable/popupmenu_bg</item>
     </style>
 
     <style name="MyPopupMenu" parent="Widget.Material3.PopupMenu">
-        <item name="android:popupBackground">@drawable/popupmenu_bg_custom</item>
+        <item name="android:popupBackground">@drawable/popupmenu_bg</item>
     </style>
 
-
-    <style name="Theme.CodeView" parent="Base.Theme.CodeView" />
-
-    <style name="Theme.CodeViewLight" parent="Base.Theme.CodeViewLight" />
-
-    <style name="Theme.CodeViewDark" parent="Base.Theme.CodeViewDark" />
+    <style name="Main.Theme.CodeView" parent="Base.Theme.CodeView" />
 
 </resources>

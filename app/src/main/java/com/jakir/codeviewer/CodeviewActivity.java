@@ -66,6 +66,7 @@ public class CodeviewActivity extends AppCompatActivity {
     private String codeFileName;
     private Uri codeUri;
     private String codeString;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class CodeviewActivity extends AppCompatActivity {
         });
 
         // Setup toolbar
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -208,7 +209,7 @@ public class CodeviewActivity extends AppCompatActivity {
     private void showCodeOnCodeView(String result) {
         mCodeView.setVisibility(VISIBLE);
 
-        String selectedCodeTheme = Pref.getString(Key.codeColorTheme_codeview, this).isEmpty() ? CodeTheme.TOMORROW.getName() : Pref.getString(Key.codeColorTheme_codeview, this);
+        String selectedCodeTheme = Pref.getString(Key.codeColorTheme_codeview, this).isEmpty() ? CodeTheme.ANDROIDSTUDIO.getName() : Pref.getString(Key.codeColorTheme_codeview, this);
         mCodeView.setTheme(isDayMode() ? new CodeTheme(selectedCodeTheme) : new CodeTheme(selectedCodeTheme + "_night")).setCode(result).setShowLineNumber(Pref.getState(Key.line, getApplicationContext())).setWrapLine(Pref.getStatep(Key.wrapline, getApplicationContext())).setLanguage(CodeLanguage.AUTO).setZoomEnabled(true).apply();
 
         mCodeView.setOnHighlightListener(new CodeView.OnHighlightListener() {
@@ -305,7 +306,6 @@ public class CodeviewActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (codeUri == null && (codeString == null || codeString.isEmpty())) return false;
         int id = item.getItemId();
         if (id == com.jakir.codeview.R.id.change_theme_action) {
 
@@ -330,7 +330,10 @@ public class CodeviewActivity extends AppCompatActivity {
             ;
 
             return true;
-        } else if (id == com.jakir.codeview.R.id.change_color_action) {
+        }
+        if (codeUri == null && (codeString == null || codeString.isEmpty())) return false;
+
+        if (id == com.jakir.codeview.R.id.change_color_action) {
             new CodeTheme(Pref.getString(Key.codeColorTheme_codeview, this)).dialog_show(this, mCodeView, selectedTheme -> {
                 String themeName = selectedTheme.getName();
                 Pref.setString(Key.codeColorTheme_codeview, themeName, this);

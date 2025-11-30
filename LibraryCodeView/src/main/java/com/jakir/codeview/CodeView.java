@@ -14,6 +14,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import androidx.core.content.ContextCompat;
+
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -277,9 +279,10 @@ public class CodeView extends WebView {
 
     private String toHtml() {
         StringBuilder sb = new StringBuilder();
-        TypedValue typedValue = new TypedValue();
-        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurface, typedValue, true);
-        String bgColor = String.format("#%06X", (0xFFFFFF & typedValue.data));
+//        TypedValue typedValue = new TypedValue();
+//        getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorSurfaceContainerLowest, typedValue, true);
+        int colorInt = ContextCompat.getColor(getContext(), R.color.code_background);
+        String bgColor = String.format("#%06X", (0xFFFFFF & colorInt));
         TypedValue typedValueText = new TypedValue();
         getContext().getTheme().resolveAttribute(com.google.android.material.R.attr.colorOnSurface, typedValueText, true);
         String tColor = String.format("#%06X", (0xFFFFFF & typedValueText.data));

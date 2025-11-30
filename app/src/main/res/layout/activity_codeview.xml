@@ -17,12 +17,29 @@
         app:title="@string/app_name"
         app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge.Emphasized" />
 
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="?colorSurfaceContainerLowest"
+        android:layout_below="@id/toolbar"
+        app:cardCornerRadius="20dp"
+        app:strokeWidth="0dp">
+
+        <com.jakir.codeview.CodeView
+            android:id="@+id/code_view"
+            android:background="?colorSurfaceContainerLowest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.card.MaterialCardView>
     <LinearLayout
         android:id="@+id/add_file"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:gravity="center"
+        android:background="?colorSurface"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -38,20 +55,6 @@
             android:text="Click here to add a file"
             android:textSize="18sp" />
     </LinearLayout>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        app:cardCornerRadius="20dp"
-        app:strokeWidth="0dp">
-
-        <com.jakir.codeview.CodeView
-            android:id="@+id/code_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
